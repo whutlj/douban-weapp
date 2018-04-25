@@ -9,9 +9,9 @@
 module.exports = function fetch(api, path, data) {
   return new Promise((resolve, reject) =>{
     wx.request({
-      url: `${ api }/${ path }`,
+      url: `${api}/${path}`,
       data: Object.assign({}, data),
-      header: 'content-type': 'application/json',
+      header: {'content-type': 'application/json'},
       success: resolve,
       fail: reject
     })
