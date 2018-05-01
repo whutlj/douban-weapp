@@ -1,1 +1,18 @@
 /* pages/carousel/carousel.wxss */
+page{
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
+.swiper-box {
+  height: 100%;
+} 
+
+.swiper-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

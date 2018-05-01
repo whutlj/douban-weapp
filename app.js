@@ -13,7 +13,9 @@ App({
     
   wechat: wechat,
   
-
+  data: {
+    currentCity: '北京'
+  },
   onLaunch: function () {
     // // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
@@ -46,11 +48,17 @@ App({
     //     }
     //   }
     // })
-    
-    wechat.getLocation()
+    const that = this
+    wechat.getLocation().then(res => {
+       const {latitude, longitude} = res
+       return baidu.getLocationName(latitude, longitude)
+    }).then(name => {
+        that.currentCity = name.replace('市', '')
+        console.log(that.currentCity)
+    }).catch(err => {
+        that.currentCity = '北京'
+        console.log(err.message)
+    })
 
-  },
-  globalData: {
-    userInfo: null
   }
 })

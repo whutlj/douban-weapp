@@ -1,2 +1,17 @@
 <!--pages/carousel/carousel.wxml-->
-<text>pages/carousel/carousel.wxml</text>
+<view class="container">
+  <swiper autoplay="{{swiper.autoplay}}"
+    indicator-dots
+    interval="{{swiper.interval}}"
+    duration="{{swiper.duration}}"
+    wx-if="{{swiperItems.length > 0}}"
+    class="swiper-box">
+    <block wx:for="{{swiperItems}}" 
+      wx:for-item="swiperItem"
+      wx:key="*this">
+      <swiper-item>
+        <image src="{{swiperItem.images.large}}" class="swiper-image" ></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

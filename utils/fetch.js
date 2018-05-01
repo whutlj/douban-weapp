@@ -6,14 +6,26 @@
  * @param  {Object} data 参数
  * @return {Promise}     抓取任务的Promise
  */
-module.exports = function fetch(api, path, data) {
+module.exports = function fetch(api, path, data, method = 'GET') {
   return new Promise((resolve, reject) =>{
     wx.request({
       url: `${api}/${path}`,
       data: Object.assign({}, data),
-      header: {'content-type': 'application/json'},
+      header: {'content-type': 'json'},
+      // method: method,
       success: resolve,
       fail: reject
     })
   })
 }
+// module.exports = function (api, path, params) {
+//   return new Promise((resolve, reject) => {
+//     wx.request({
+//       url: `${api}/${path}`,
+//       data: Object.assign({}, params),
+//       header: { 'Content-Type': 'json' },
+//       success: resolve,
+//       fail: reject
+//     })
+//   })
+// }

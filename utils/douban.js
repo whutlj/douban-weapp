@@ -8,17 +8,16 @@ function fetchApi(path, data) {
 
 
 function find(path, page = 1, count = 20, search = '') {
-  const data = {
+  const params = {
     start: (page - 1) * count,
     count: count,
-    city: getApp().currentCity
+    city: getApp().data.currentCity
   }
-  return fetchApi(path, search ? Object.assign(data, {q: search}) : data)
+  return fetchApi(path, search ? Object.assign(params, {q: search}) : params).then(res => res.data)
 }
 
 function findOne (id) {
   return fetchApi('subject/' + id).then(res => res.data)
 }
 
-module.exports.find = find
-module.exports.findOne = findOne
+module.exports = { find, findOne}
