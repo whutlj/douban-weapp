@@ -1,0 +1,37 @@
+<!--pages/movieList/movieList.wxml-->
+<view class="container">
+  <view class="list-item">
+    <view class="list-title">
+      正在热映
+    </view>
+    <view class="list-content">
+      <view class="movie-item" wx:for="{{[1,2,3,4,5,6,7]}}">
+        
+      </view>
+    </view>
+  </view>
+  <view class="list-item">
+    <view class="list-title">
+      即将上映
+    </view>
+    <view class="list-content">
+      
+    </view>
+  </view>
+  <view class="list-item">
+    <view class="list-title">
+      新片榜
+    </view>
+    <view class="list-content">
+      
+    </view>
+  </view>
+  <view class="list-item">
+    <view class="list-title">
+      北美票房榜
+    </view>
+    <view class="list-content">
+      
+    </view>
+  </view>
+</view>

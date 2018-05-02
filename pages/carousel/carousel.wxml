@@ -8,9 +8,11 @@
     class="swiper-box">
     <block wx:for="{{swiperItems}}" 
       wx:for-item="swiperItem"
-      wx:key="*this">
+      wx:for-index="index"
+      wx:key="swiperItem.id">
       <swiper-item>
         <image src="{{swiperItem.images.large}}" class="swiper-image" ></image>
+        <view class="open-app" wx:if = "{{index === swiperItems.length - 1}}" bindtap="start">开始体验</view>
       </swiper-item>
     </block>
   </swiper>

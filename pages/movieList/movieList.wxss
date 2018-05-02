@@ -1,0 +1,22 @@
+/* pages/movieList/movieList.wxss */
+.container {
+  font-size: 14px;
+}
+.list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-content{
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.movie-item {
+  width: 120rpx;
+  height: 160rpx;
+  border: 1px solid #ccc;
+  /*flex-shrink: 0;*/
+  padding: 10rpx;
+}
