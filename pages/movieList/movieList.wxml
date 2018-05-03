@@ -1,37 +1,31 @@
 <!--pages/movieList/movieList.wxml-->
 <view class="container">
-  <view class="list-item">
-    <view class="list-title">
-      正在热映
-    </view>
-    <view class="list-content">
-      <view class="movie-item" wx:for="{{[1,2,3,4,5,6,7]}}">
-        
+  <view class="top-wrapper">
+   <swiper indicator-dots 
+    duration="{{swiper.duration}}"
+    interval="{{swiper.interval}}"
+    indicator-active-color="{{swiper.activeColor}}"
+    autoplay="{{swiper.activeColor}}"
+    class="swiper">
+    <block wx:for="{{[1,2,3,4,5,6,7]}}">
+      <swiper-item>
+        <image src="" class="swiper-image"></image>
+      </swiper-item>
+    </block>
+   </swiper>
+  </view>
+  <view class="content-wrapper">
+    <view class="movie-list-box">
+      <view class="movie-type">
+        <text>标题</text>
+        <view class="arrow">
+          <image src=""></image>
+        </view>
       </view>
-    </view>
-  </view>
-  <view class="list-item">
-    <view class="list-title">
-      即将上映
-    </view>
-    <view class="list-content">
-      
-    </view>
-  </view>
-  <view class="list-item">
-    <view class="list-title">
-      新片榜
-    </view>
-    <view class="list-content">
-      
-    </view>
-  </view>
-  <view class="list-item">
-    <view class="list-title">
-      北美票房榜
-    </view>
-    <view class="list-content">
-      
+      <scroll-view class="movie-list"
+        scroll-x="true">
+          <view class="movie-list-item" wx:for="{{[1,2,3,4,5,6,7,8]}}"></view>
+      </scroll-view>
     </view>
   </view>
 </view>
