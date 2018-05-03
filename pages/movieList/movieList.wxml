@@ -19,7 +19,7 @@
       <view class="movie-type">
         <text>标题</text>
         <view class="arrow">
-          <image src=""></image>
+          <image src="../../images/arrowright.png"></image>
         </view>
       </view>
       <scroll-view class="movie-list"

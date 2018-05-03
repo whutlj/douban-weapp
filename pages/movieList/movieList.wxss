@@ -4,5 +4,6 @@
 .swiper {height: 100%;}
 .swiper-image{position: absolute;width: 100%;height: 100%;border: 1px solid #ff6200;}
 .movie-list-item{width: 120rpx;height: 160rpx;}
-.movie-type {position: }
-.arrow{}
+.movie-type {position: relative;padding: 20rpx 30rpx;}
+.movie-type .arrow {position: absolute;top: 20rpx;right: 30rpx;width: 28rpx;height: 28rpx;}
+.movie-type .arrow image{width: 100%;height: 100%;}
