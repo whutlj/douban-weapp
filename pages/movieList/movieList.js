@@ -8,8 +8,8 @@ Page({
   data: {
     swiper: {
       autoplay: true,
-      interval: 2000,
-      duration:   200
+      interval: 4000,
+      duration: 500
     },
     typeList: [
       {key: 'in_theaters', count: 15}, // 正则热映

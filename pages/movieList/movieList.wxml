@@ -5,9 +5,9 @@
     duration="{{swiper.duration}}"
     interval="{{swiper.interval}}"
     indicator-active-color="{{swiper.activeColor}}"
-    autoplay="{{swiper.activeColor}}"
+    autoplay="{{swiper.autoplay}}"
     class="swiper">
-    <block wx:for="{{[1,2,3,4,5,6,7]}}">
+    <block wx:for="{{[1,2,3,4,5,6,7]}}" wx:key="index">
       <swiper-item>
         <image src="" class="swiper-image"></image>
       </swiper-item>
@@ -22,9 +22,10 @@
           <image src="../../images/arrowright.png"></image>
         </view>
       </view>
-      <scroll-view class="movie-list"
-        scroll-x="true">
-          <view class="movie-list-item" wx:for="{{[1,2,3,4,5,6,7,8]}}"></view>
+      <scroll-view scroll-x>
+        <view class="movie-list" >
+          <view class="movie-list-item" wx:for="{{[1,2,3,4,5,6,7,8]}}" wx:key="index"></view>
+        </view>
       </scroll-view>
     </view>
   </view>
