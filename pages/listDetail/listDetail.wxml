@@ -1,0 +1,18 @@
+<!--pages/listDetial/listDetail.wxml-->
+<view class="container">
+  <view>共有<text class="strong">{{total}}</text>部电影</view>
+  <view class="movie-list">
+    <view class="movie" wx:for="movies" wx:key="id">
+      <view class="movie-image">
+        <image src="{{item.images.small}}"></image>
+      </view>
+      <view class="movie-des">
+        <view class="movie-name">{{item.title}}</view>
+        <view class="movie-name">{{item.title}}</view>
+      </view>
+      <view class="movie-score">
+        <view class="score">{{item.rating.value}}</view>
+      </view>
+    </view>
+  </view>
+</view>

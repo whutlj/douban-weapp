@@ -53,10 +53,9 @@ App({
        const {latitude, longitude} = res
        return baidu.getLocationName(latitude, longitude)
     }).then(name => {
-        that.currentCity = name.replace('市', '')
-        console.log(that.currentCity)
+        that.data.currentCity = name.replace('市', '')
     }).catch(err => {
-        that.currentCity = '北京'
+        that.data.currentCity = '北京'
         console.log(err.message)
     })
 

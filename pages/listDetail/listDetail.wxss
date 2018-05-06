@@ -1,0 +1,7 @@
+/* pages/listDetial/listDetail.wxss */
+.movie-list {display: flex;flex-direction: column;margin-top: 20rpx;}
+.movie {display: flex;height: 180rpx;}
+.movie-image{flex: 0 0 auto;width: 160rpx;}
+.movie-detail{flex: 1;}
+.movie-score{flex: 0 0 auto;width: 120rpx;}
+.score {border-radius: 4rpx;padding: 5rpx 10rpx;text-align: center;background-color: #ff6200;font-size: 14px;color: #fff;}

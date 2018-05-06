@@ -1,16 +1,19 @@
 {
   "pages":[
+    "pages/listDetail/listDetail",
     "pages/movieList/movieList",
     "pages/carousel/carousel",
     "pages/index/index",
     "pages/movieSearch/movieSearch",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/movieDetail/movieDetail"
+    
   ],
   "window":{
+    "navigationBarBackgroundColor": "#ff6200",
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "阿杰的电影院",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"dark"
   },
   "tabBar": {
     "position": "bottom",
@@ -35,5 +38,5 @@
     "request": 20000,
     "downloadFile": 20000
   },
-  "debug": false
+  "debug": true
 }
