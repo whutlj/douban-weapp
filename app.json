@@ -1,8 +1,8 @@
 {
   "pages":[
     "pages/carousel/carousel",
-    "pages/movieList/movieList",
     "pages/listDetail/listDetail",
+    "pages/movieList/movieList",
     "pages/index/index",
     "pages/movieSearch/movieSearch",
     "pages/profile/profile",

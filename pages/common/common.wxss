@@ -1,3 +1,3 @@
 .more-data {text-align: center;}
 .more-data-loading {width: 80rpx;height: 80rpx;}
-.no-more-data {text-align: center;font-size: 28rpx;color: #999999;}
+.no-more-data {text-align: center;font-size: 28rpx;color: #999999;height: 64rpx;line-height: 64rpx;}

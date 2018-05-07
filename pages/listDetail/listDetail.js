@@ -14,24 +14,15 @@ Page({
   key: '',
   start: 1,
   count: 20,
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    const title = options.title || '正在上映'
-    wx.setNavigationBarTitle({
-      title: title
-    })
+  loadMore: function () {
     wx.showLoading({
       title: '拼命加载中',
       mask: true
     })
-    const key = options.key || 'in_theaters'
-    this.key = key
     this.setData({
       loading: true
     })
-    app.douban.find(key, this.start, this.count).then(res => {
+    return app.douban.find(this.key, this.start, this.count).then(res => {
       let total = res.total ? res.total : res.subjects.length
       this.setData({
         movies: res.subjects,
@@ -40,6 +31,18 @@ Page({
       })
       wx.hideLoading()
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    const title = options.title || '正在上映'
+    wx.setNavigationBarTitle({
+      title: title
+    })
+    const key = options.key || 'in_theaters'
+    this.key = key
+    this.loadMore()
   },
 
   /**
@@ -74,6 +77,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.start = 1
+    this.loadMore().then(res=> wx.stopPullDownRefresh())
   },
 
   /**

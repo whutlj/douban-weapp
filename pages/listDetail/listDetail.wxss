@@ -1,7 +1,7 @@
 /* pages/listDetial/listDetail.wxss */
 @import "../common/common.wxss";
 .movie-list {display: flex;flex-direction: column;margin-top: 20rpx;}
-.movie {display: flex;height: 240rpx;padding: 20rpx 40rpx;}
+.movie {display: flex;height: 240rpx;padding: 20rpx 40rpx 20rpx 10rpx;}
 .movie-image{flex: 0 0 auto;width: 160rpx;margin-right: 20rpx;}
 .movie-image image{width: 100%;height: 100%;}
 .movie-des{flex: 1;}
@@ -10,3 +10,4 @@
 .name{font-size: 32rpx;margin-bottom: 10rpx;}
 .original-name{font-size: 22rpx;color: #c0c0c0;margin-bottom: 10rpx;}
 .director{font-size: 24rpx;color: #999999;}
+.movie-count{margin-left: 10rpx;}

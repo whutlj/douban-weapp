@@ -4,7 +4,7 @@
   <view wx:if="{{loading}}">
   </view>
   <block wx:else>
-    <view>共有<text class="strong">{{total}}</text>部电影</view>
+    <view class="movie-count">共有<text class="strong">{{total}}</text>部电影</view>
     <view class="movie-list">
       <view class="movie" wx:for="{{movies}}" wx:key="id">
         <view class="movie-image">

@@ -18,7 +18,6 @@ Page({
       {key: 'in_theaters', count: 15}, // 正则热映
       {key: 'coming_soon', count: 10}, // 即将上映
       {key: 'new_movies', count: 20}, // 新片榜
-      {key: 'us_box', count: 8}, // 北美票房榜
       {key: 'top250',count: 15} // top250
     ]
   },
