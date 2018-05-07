@@ -1,15 +1,19 @@
 // pages/listDetial/listDetail.js
 const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    total: 100,
-    movies: []
+    total: 0,
+    movies: [],
+    loading: false,
+    moreData: false,
+    hasMore: true
   },
-
+  key: '',
+  start: 1,
+  count: 20,
   /**
    * 生命周期函数--监听页面加载
    */
@@ -23,9 +27,16 @@ Page({
       mask: true
     })
     const key = options.key || 'in_theaters'
-    app.douban.find(key, 0, 20).then(res => {
+    this.key = key
+    this.setData({
+      loading: true
+    })
+    app.douban.find(key, this.start, this.count).then(res => {
+      let total = res.total ? res.total : res.subjects.length
       this.setData({
-        movies: res.subjects
+        movies: res.subjects,
+        total: total,
+        loading: false
       })
       wx.hideLoading()
     })
@@ -63,14 +74,40 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('xiala')
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    this.setData({
+      moreData: true
+    })
+    if (this.key === 'new_movies') {
+      this.setData({
+        hasMore: false,
+        moreData: true
+      })
+      return
+    }
+
+    if (this.data.hasMore) {
+      this.start += 1
+      app.douban.find(this.key, this.start, this.count).then(res => {
+        if (res.subjects.length === 0) {
+          this.setData({
+            hasMore: false,
+            moreData: true
+          })
+        } else {
+          this.setData({
+            movies: this.data.movies.concat(res.subjects),
+            hasMore: true,
+            moreData: false
+          })
+        }
+      })
+    }
   },
 
   /**

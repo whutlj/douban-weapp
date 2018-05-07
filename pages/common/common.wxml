@@ -1,0 +1,8 @@
+<template name="moreData">
+  <view class="more-data" wx:if="{{hasMore}}">
+    <image class="more-data-loading" src="../../images/loading.svg"></image>
+  </view>
+  <view wx:else class="no-more-data">
+    <text>没有更多数据了</text>
+  </view>
+</template>

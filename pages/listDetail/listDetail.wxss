@@ -1,7 +1,12 @@
 /* pages/listDetial/listDetail.wxss */
+@import "../common/common.wxss";
 .movie-list {display: flex;flex-direction: column;margin-top: 20rpx;}
-.movie {display: flex;height: 180rpx;}
-.movie-image{flex: 0 0 auto;width: 160rpx;}
-.movie-detail{flex: 1;}
-.movie-score{flex: 0 0 auto;width: 120rpx;}
-.score {border-radius: 4rpx;padding: 5rpx 10rpx;text-align: center;background-color: #ff6200;font-size: 14px;color: #fff;}
+.movie {display: flex;height: 240rpx;padding: 20rpx 40rpx;}
+.movie-image{flex: 0 0 auto;width: 160rpx;margin-right: 20rpx;}
+.movie-image image{width: 100%;height: 100%;}
+.movie-des{flex: 1;}
+.movie-score{width: 120rpx;text-align: right;}
+.score {display: inline-block;width: 80rpx;text-align: center;border-radius: 20rpx;padding: 5rpx 10rpx;text-align: center;background-color: #ff6200;font-size: 14px;color: #fff;}
+.name{font-size: 32rpx;margin-bottom: 10rpx;}
+.original-name{font-size: 22rpx;color: #c0c0c0;margin-bottom: 10rpx;}
+.director{font-size: 24rpx;color: #999999;}

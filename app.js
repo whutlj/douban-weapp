@@ -14,7 +14,7 @@ App({
   wechat: wechat,
   
   data: {
-    currentCity: '北京'
+    currentCity: '成都'
   },
   onLaunch: function () {
     // // 展示本地存储能力

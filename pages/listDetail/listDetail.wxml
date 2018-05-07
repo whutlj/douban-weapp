@@ -1,18 +1,28 @@
 <!--pages/listDetial/listDetail.wxml-->
+
 <view class="container">
-  <view>共有<text class="strong">{{total}}</text>部电影</view>
-  <view class="movie-list">
-    <view class="movie" wx:for="movies" wx:key="id">
-      <view class="movie-image">
-        <image src="{{item.images.small}}"></image>
-      </view>
-      <view class="movie-des">
-        <view class="movie-name">{{item.title}}</view>
-        <view class="movie-name">{{item.title}}</view>
-      </view>
-      <view class="movie-score">
-        <view class="score">{{item.rating.value}}</view>
+  <view wx:if="{{loading}}">
+  </view>
+  <block wx:else>
+    <view>共有<text class="strong">{{total}}</text>部电影</view>
+    <view class="movie-list">
+      <view class="movie" wx:for="{{movies}}" wx:key="id">
+        <view class="movie-image">
+          <image src="{{item.images.small}}"></image>
+        </view>
+        <view class="movie-des">
+          <view class="name">{{item.title}}</view>
+          <view class="original-name">{{item.original_title}}({{item.year}})</view>
+          <view class="director">导演：{{item.directors[0].name}}</view>
+        </view>
+        <view class="movie-score">
+          <view class="score">{{item.rating.average}}</view>
+        </view>
       </view>
     </view>
-  </view>
+    <view wx:if="{{moreData}}">
+      <import src="../common/common.wxml"></import>
+      <template is="moreData" data="{{hasMore}}"></template>
+    </view>
+  </block>
 </view>
